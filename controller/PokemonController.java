@@ -10,8 +10,8 @@ public class PokemonController {
     private static Random random = new Random();
 
     public static void capturePokemon(Trainer trainer, Pokemon pokemon) {
-        if (trainer.getNumOfPokemon() < trainer.getPokemonList().length) {
-            trainer.getPokemonList()[trainer.getNumOfPokemon()] = pokemon;
+        if (trainer.getNumOfPokemon() < trainer.getPokemonArray().length) {
+            trainer.getPokemonArray()[trainer.getNumOfPokemon()] = pokemon;
             trainer.setNumOfPokemon(trainer.getNumOfPokemon() + 1);
             System.out.println("You captured " + pokemon.getName() + "!");
         } else {
@@ -20,8 +20,8 @@ public class PokemonController {
     }
 
     public static void addPokemonToTrainer(Trainer trainer, Pokemon pokemon) {
-        if (trainer.getNumOfPokemon() < trainer.getPokemonList().length) {
-            trainer.getPokemonList()[trainer.getNumOfPokemon()] = pokemon;
+        if (trainer.getNumOfPokemon() < trainer.getPokemonArray().length) {
+            trainer.getPokemonArray()[trainer.getNumOfPokemon()] = pokemon;
             trainer.setNumOfPokemon(trainer.getNumOfPokemon() + 1);
             System.out.println(pokemon.getName() + " added to your team.");
         } else {
@@ -35,8 +35,8 @@ public class PokemonController {
             return;
         }
 
-        Pokemon pokemonA = trainerA.getPokemonList()[random.nextInt(trainerA.getNumOfPokemon())];
-        Pokemon pokemonB = trainerB.getPokemonList()[random.nextInt(trainerB.getNumOfPokemon())];
+        Pokemon pokemonA = trainerA.getPokemonArray()[random.nextInt(trainerA.getNumOfPokemon())];
+        Pokemon pokemonB = trainerB.getPokemonArray()[random.nextInt(trainerB.getNumOfPokemon())];
 
         System.out.println("Trainer A sends out " + pokemonA.getName() + "!");
         System.out.println("Trainer B sends out " + pokemonB.getName() + "!\n");

@@ -2,12 +2,12 @@ package InheritanceProjectForClassJaita118.model;
 
 public class Trainer {
     private String name;
-    private Pokemon[] pokemonList;
+    private Pokemon[] pokemonArray;
     private int numOfPokemon;
 
     public Trainer(String name, int maxPokemon) {
         this.name = name;
-        this.pokemonList = new Pokemon[maxPokemon];
+        this.pokemonArray = new Pokemon[maxPokemon];
         this.numOfPokemon = 0;
     }
 
@@ -19,12 +19,12 @@ public class Trainer {
         this.name = name;
     }
 
-    public Pokemon[] getPokemonList() {
-        return pokemonList;
+    public Pokemon[] getPokemonArray() {
+        return pokemonArray;
     }
 
-    public void setPokemonList(Pokemon[] pokemonList) {
-        this.pokemonList = pokemonList;
+    public void setPokemonArray(Pokemon[] pokemonArray) {
+        this.pokemonArray = pokemonArray;
     }
 
     public int getNumOfPokemon() {
