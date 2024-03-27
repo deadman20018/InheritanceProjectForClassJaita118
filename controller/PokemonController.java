@@ -9,16 +9,6 @@ import java.util.Random;
 public class PokemonController {
     private static Random random = new Random();
 
-    public static void capturePokemon(Trainer trainer, Pokemon pokemon) {
-        if (trainer.getNumOfPokemon() < trainer.getPokemonArray().length) {
-            trainer.getPokemonArray()[trainer.getNumOfPokemon()] = pokemon;
-            trainer.setNumOfPokemon(trainer.getNumOfPokemon() + 1);
-            System.out.println("You captured " + pokemon.getName() + "!");
-        } else {
-            System.out.println("Your Pokemon team is full. You cannot capture more Pokemon.");
-        }
-    }
-
     public static void addPokemonToTrainer(Trainer trainer, Pokemon pokemon) {
         if (trainer.getNumOfPokemon() < trainer.getPokemonArray().length) {
             trainer.getPokemonArray()[trainer.getNumOfPokemon()] = pokemon;
@@ -63,7 +53,7 @@ public class PokemonController {
         double effectiveness = mostDamagingMove.getType().getEffectivenessAgainst(defender.getType());
         int damage = (int) (mostDamagingMove.getPower() * effectiveness);
 
-        System.out.println(attacker.getName() + "'s " + attacker.getMoves()[0].getName() +
+        System.out.println(attacker.getName() +
                 " uses " + mostDamagingMove.getName() + " and deals " + damage + " damage.");
 
         defender.setHp(defender.getHp() - damage);
@@ -88,5 +78,14 @@ public class PokemonController {
         }
 
         return mostDamagingMove;
+    }
+    public static void capturePokemon(Trainer trainer, Pokemon pokemon) {
+        if (trainer.getNumOfPokemon() < trainer.getPokemonArray().length) {
+            trainer.getPokemonArray()[trainer.getNumOfPokemon()] = pokemon;
+            trainer.setNumOfPokemon(trainer.getNumOfPokemon() + 1);
+            System.out.println("You captured " + pokemon.getName() + "!");
+        } else {
+            System.out.println("Your Pokemon team is full. You cannot capture more Pokemon.");
+        }
     }
 }
